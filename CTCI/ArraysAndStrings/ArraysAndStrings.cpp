@@ -7,15 +7,27 @@ namespace CTCI
 {
     ArraysAndStrings::ArraysAndStrings()
     {
-
     }
 
     ArraysAndStrings::~ArraysAndStrings()
     {
-
     }
 
-    // see if a given string is unique, meaning all characters in the str are unique
+    // This function uses a map to store each character as it traverses
+    // the string. The implementation checks for uniqueness as it goes along,
+    // so it'll be able to determine that a string is/isn't unique right
+    // after processing the first non-unique character. If the first non-unique
+    // character is at the very end of the string (worst case), this implementation
+    // will have a time complexity of O(n).
+    //
+    // TODO: This really doesn't require a map. A vector would do the job. Initially,
+    // I was thinking I may use the frequency of the character for something, but then
+    // realized it was not necessary, and did not switch to a vector. The only real
+    // change that would be caused would be how we use std::find and how we insert
+    // into the vector. As of now, this stores a frequency of 1 for each character
+    // that is added to the map, but since it'll never add the non-unique characters
+    // it's useless. Eventually switch to a vector or other container to reduce the
+    // amount of space used by this function.
     bool ArraysAndStrings::isUnique(std::string str)
     {
         bool retVal = false;
@@ -67,4 +79,4 @@ namespace CTCI
 
         return retVal;
     }
-}
+} // namespace CTCI

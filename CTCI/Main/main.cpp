@@ -4,8 +4,6 @@
 // Entry point into CTCI exercises
 int main()
 {
-    std::cout << "Hello World!" << std::endl;
-
     // tests the ArraysAndStrings implementation
     std::string testStr = "";
     CTCI::ArraysAndStrings::isUnique(testStr);
